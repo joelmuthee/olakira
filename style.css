@@ -227,7 +227,7 @@ nav.scrolled {
   position: fixed;
   inset: 0;
   background: rgba(12, 9, 7, 0.98);
-  z-index: 190;
+  z-index: 210;
   flex-direction: column;
   align-items: center;
   justify-content: center;
