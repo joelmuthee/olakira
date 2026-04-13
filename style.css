@@ -1280,7 +1280,7 @@ footer {
   .visit-inner { grid-template-columns: 1fr; gap: 3rem; }
   .service-intro { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
   .service-intro.reverse { direction: ltr; }
-  .service-intro-photo img { height: 400px; }
+  .service-intro-photo img { height: auto; max-height: 520px; object-fit: cover; width: 100%; }
   .gallery-grid-3 { grid-template-columns: 1fr 1fr; }
   .gallery-grid-3 .gallery-item.tall { grid-row: span 1; height: 320px; }
   .menu-grid { grid-template-columns: 1fr; }
