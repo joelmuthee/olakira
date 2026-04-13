@@ -975,8 +975,14 @@ nav.scrolled {
   font-weight: 300;
   line-height: 1.65;
 }
-.info-value a { text-decoration: none; color: inherit; }
-.info-value a:hover { color: var(--gold-lt); }
+.info-value a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(212,175,100,0.35);
+  padding-bottom: 1px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.info-value a:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
 .hours-table {
   display: grid;
   grid-template-columns: auto 1fr;
