@@ -1119,6 +1119,13 @@ footer {
   transition: border-color 0.3s, color 0.3s;
 }
 .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+.footer-credit {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212,175,100,0.25);
+  transition: color 0.2s, border-color 0.2s;
+}
+.footer-credit:hover { color: var(--gold-lt); border-color: var(--gold-lt); }
 .footer-copy {
   font-size: 0.6rem;
   color: var(--muted);
