@@ -1046,6 +1046,25 @@ nav.scrolled {
 }
 
 /* ============================================
+   CONTACT PAGE
+   ============================================ */
+.contact-section {
+  padding: 7rem 4rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.contact-map .map-embed {
+  height: 420px;
+  margin-bottom: 0;
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 footer {
@@ -1278,6 +1297,8 @@ footer {
   .home-about { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
   .home-about-photo img { height: 420px; }
   .visit-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-section { padding: 5rem 2rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
   .service-intro { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2rem; }
   .service-intro.reverse { direction: ltr; }
   .service-intro-photo img { height: auto; max-height: 520px; object-fit: cover; width: 100%; }
