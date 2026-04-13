@@ -84,7 +84,6 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="home-hero-content">
-      <img src="Olakira logo.jpg" alt="Olakira by Rio" class="home-hero-logo">
       <h1 class="home-hero-tagline">Where <em>beauty</em> meets<br>inner peace.</h1>
       <p class="home-hero-sub">Spa &nbsp;·&nbsp; Salon &nbsp;·&nbsp; Barber &nbsp;·&nbsp; Nail Care</p>
       <div class="home-hero-divider"></div>
@@ -171,15 +170,15 @@
       <blockquote class="about-quote">"We don't just make you look good.<br>We make you feel like yourself again."</blockquote>
       <div class="about-stats">
         <div>
-          <div class="stat-num">4</div>
+          <div class="stat-num" data-target="4" data-suffix="">4</div>
           <div class="stat-label">Services</div>
         </div>
         <div>
-          <div class="stat-num">6,700+</div>
+          <div class="stat-num" data-target="6700" data-suffix="+">6,700+</div>
           <div class="stat-label">Followers</div>
         </div>
         <div>
-          <div class="stat-num">10%</div>
+          <div class="stat-num" data-target="10" data-suffix="%">10%</div>
           <div class="stat-label">First Visit Off</div>
         </div>
       </div>
@@ -419,6 +418,33 @@
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
     }, 7000);
+
+    // Stat counters
+    let counted = false;
+    function runCounters() {
+      if (counted) return;
+      const stats = document.querySelectorAll('.stat-num[data-target]');
+      if (!stats.length) return;
+      const first = stats[0].getBoundingClientRect();
+      if (first.top > window.innerHeight) return;
+      counted = true;
+      stats.forEach(el => {
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        const isLarge = target >= 1000;
+        const duration = 1800;
+        const steps = 60;
+        let step = 0;
+        const timer = setInterval(() => {
+          step++;
+          const val = Math.round(target * (step / steps));
+          el.textContent = isLarge ? val.toLocaleString() + suffix : val + suffix;
+          if (step >= steps) { clearInterval(timer); el.textContent = isLarge ? target.toLocaleString() + suffix : target + suffix; }
+        }, duration / steps);
+      });
+    }
+    window.addEventListener('scroll', runCounters, { passive: true });
+    runCounters();
 
     // Scroll reveal — also triggers immediately for elements already in view
     const observer = new IntersectionObserver((entries) => {
